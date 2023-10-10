@@ -5,7 +5,7 @@ import { IdsDataGridColumn } from 'ids-enterprise-wc/components/ids-data-grid/id
 @Component({
   selector: 'app-ids-data-grid',
   templateUrl: './ids-data-grid.component.html',
-  styleUrls: ['./ids-data-grid.component.css'],
+  styleUrls: ['./ids-data-grid.component.scss'],
 })
 export class IdsDataGridComponent implements AfterViewInit {
   @ViewChild('dataGrid', { read: ElementRef })
@@ -45,7 +45,50 @@ export class IdsDataGridComponent implements AfterViewInit {
 
   resetColumns() {
     this.columns = [];
-    this.data = [{}, {}, {}, {}, {}, {}];
+    this.data = [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+    ];
     this.dataGrid.nativeElement.redraw();
   }
 }
