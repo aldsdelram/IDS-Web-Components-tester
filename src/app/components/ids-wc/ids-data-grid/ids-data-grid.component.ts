@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import type IdsDataGrid from 'ids-enterprise-wc/components/ids-data-grid/ids-data-grid';
 import { IdsDataGridColumn } from 'ids-enterprise-wc/components/ids-data-grid/ids-data-grid-column';
+import IdsGlobal from 'ids-enterprise-wc/components/ids-global/ids-global';
 
 @Component({
   selector: 'app-ids-data-grid',
@@ -15,10 +16,25 @@ export class IdsDataGridComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     console.log('dataGrid', this.dataGrid);
+    this.columns = [
+      {
+        id: 'marsielle',
+        name: 'COL' + 'marsielle',
+        field: 'marsielle',
+        // sortable: false,
+        resizable: true,
+        // align: 'center',
+        formatter: this.dataGrid.nativeElement.formatters.text,
+        filterType: this.dataGrid.nativeElement.filters.text,
+      },
+    ];
     this.dataGrid.nativeElement.columns = this.columns;
     this.dataGrid.nativeElement.data = this.data;
     this.dataGrid.nativeElement.filterable = true;
     this.dataGrid.nativeElement.pagination = 'client-side';
+
+    const a = IdsGlobal.getLocale().formatNumber('900');
+    console.log(a);
   }
 
   addColumns() {
